@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Share+Tech+Mono&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --void: #040406;
+  --abyss: #08080f;
+  --deep: #0d0d1a;
+  --shadow: #111122;
+  --surface: #161628;
+  --raised: #1c1c35;
+  --border: #2a2a4a;
+  --muted: #3a3a5c;
+  --faint: #4a4a6a;
+  --dim: #6b6b8a;
+  --mid: #8888aa;
+  --text: #c8c8e8;
+  --bright: #e0e0f8;
+  --white: #f0f0ff;
+
+  --blood: #6b1212;
+  --blood-bright: #c0392b;
+  --ember: #a04010;
+  --ember-bright: #e05a20;
+  --gold: #7a5a10;
+  --gold-bright: #c49a28;
+  --gold-pale: #ecc84a;
+  --soul: #162f5a;
+  --soul-bright: #2a5aa8;
+  --soul-pale: #68a8e8;
+  --teal: #145040;
+  --teal-bright: #1f7a5a;
+  --teal-pale: #4ec49a;
+  --rot: #305018;
+  --rot-bright: #507830;
+  --rot-pale: #88b84a;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: var(--void);
+  color: var(--text);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 18px;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: var(--abyss); }
+::-webkit-scrollbar-thumb { background: var(--muted); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--faint); }
+
+@keyframes flicker {
+  0%,95%,100% { opacity: 1; }
+  97% { opacity: 0.75; }
+}
+@keyframes pulse-glow {
+  0%,100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes slow-burn {
+  0%,100% { text-shadow: 0 0 12px rgba(196,154,40,0.4); }
+  50% { text-shadow: 0 0 24px rgba(196,154,40,0.8), 0 0 48px rgba(196,154,40,0.2); }
+}
+@keyframes heartbeat {
+  0%,100% { transform: scale(1); }
+  15% { transform: scale(1.03); }
+  30% { transform: scale(1); }
+  45% { transform: scale(1.015); }
+}
+@keyframes trace-border {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+@keyframes bar-slide {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(400%); }
+}
+
+.animate-flicker { animation: flicker 6s infinite; }
+.animate-pulse-glow { animation: pulse-glow 3s ease-in-out infinite; }
+.animate-fade-up { animation: fade-up 0.5s ease-out both; }
+.animate-slow-burn { animation: slow-burn 4s ease-in-out infinite; }
+.animate-heartbeat { animation: heartbeat 2.8s ease-in-out infinite; }
+
+.font-display { font-family: 'Cinzel', serif; }
+.font-mono-custom { font-family: 'Share Tech Mono', monospace; }
