@@ -5,6 +5,7 @@ import type { RunState } from '../types/game';
 
 export function TitleScreen() {
   const startNewRun = useGameStore(s => s.startNewRun);
+  const setScreen = useGameStore(s => s.setScreen);
   const loadSave = useGameStore(s => s.loadSave);
   const [savedRun, setSavedRun] = useState<RunState | null>(null);
   const [checking, setChecking] = useState(true);
@@ -25,7 +26,7 @@ export function TitleScreen() {
 
   const handleNewRun = () => {
     startNewRun();
-    // Session ID stored via App.tsx useEffect on run.sessionId change
+    setScreen('hub');
   };
 
   const handleContinue = () => {
